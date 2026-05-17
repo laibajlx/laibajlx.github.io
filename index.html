@@ -455,6 +455,83 @@
       line-height: 1.9;
     }
 
+    /* SKILLS & TECHNOLOGIES */
+    #skills {
+      background: var(--black);
+      min-height: auto;
+      padding: 80px 48px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 18px;
+      border: 1px solid var(--border);
+      background: rgba(255, 45, 120, 0.02);
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+      min-width: 80px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease, background 0.25s, border-color 0.25s;
+    }
+
+    .skill-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, var(--pink-hot), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .skill-item:hover::before {
+      transform: scaleX(1);
+    }
+
+    .skill-item:hover {
+      background: rgba(255, 45, 120, 0.07);
+      border-color: var(--pink-mid);
+    }
+
+    .skill-item:hover svg,
+    .skill-item:hover img {
+      filter: drop-shadow(0 0 6px var(--pink-hot));
+    }
+
+    .skill-item svg,
+    .skill-item img {
+      width: 36px;
+      height: 36px;
+      transition: filter 0.25s;
+    }
+
+    .skill-name {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+
     /* FOOTER */
     footer {
       padding: 48px 48px;
@@ -546,6 +623,9 @@
       section { padding: 100px 24px 60px; }
       .hobbies-grid { grid-template-columns: 1fr; }
       footer { padding: 40px 24px; }
+      #skills { padding: 60px 24px; }
+      .skills-grid { gap: 14px; }
+      .skill-item { min-width: 68px; padding: 16px 12px; }
     }
   </style>
 </head>
@@ -561,6 +641,7 @@
     <li><a href="#about">about</a></li>
     <li><a href="#career">career</a></li>
     <li><a href="#hobbies">beyond code</a></li>
+    <li><a href="#skills">skills</a></li>
   </ul>
 </nav>
 
@@ -592,13 +673,15 @@
     <h2 class="section-title fade-in">who I am</h2>
     <div class="about-text-full fade-in">
       <p>
-        I started in tech in <span class="pink">10th grade</span> through a fellowship where I built my first app combating menstrual poverty in <span class="pink">São Paulo, Brazil.</span> From there I went on to doing hackathons and eventually organizing one myself at Columbia.
+        I started in tech in <span class="pink">10th grade</span> through a fellowship where I built my first app combating menstrual poverty in <span class="pink">São Paulo, Brazil.</span> From there I went on to doing hackathons and eventually organizing one myself at Columbia. 
       </p>
       <p>
-        At Columbia I love exploring my options across <span class="pink">linguistics, CS, physics, math, and language.</span> 
+        I enjoy reading about morphology, syntax, and semantics and how our brain is able to understand language like how you're reading the words on your screen right now or how you're able to follow what someone is saying as they speak to you which led me into the study of NLP and computational linguistics.      </p>
+      <p>
+        At Columbia, I'm currently exploring computational linguistics, systems thinking, and the intersection of language and intelligence through coursework across CS, linguistics, math, and physics.
       </p>
       <p>
-        I like to build things, learning from others and teaching what I've learned to others.
+        I like to build things, learn from others, and teach what I've learned to others.
       </p>
     </div>
   </div>
@@ -629,7 +712,7 @@
         <div class="timeline-role">Software Engineer Intern</div>
         <div class="timeline-company">Travelers — Experimentation Team (BSI)</div>
         <div class="timeline-desc">
-            Worked on the Experience Management Team within BSI. Leveraged Amazon Web Services and Terraform to manage infrastructure. Contributed to prompt engineering for the team’s Bedrock-based LLM system and used CI/CD pipelines to deploy production-ready changes all while learning how software systems operate within a major insurance company.  
+            Worked on the Experience Management Team within BSI. Leveraged Amazon Web Services and Terraform to manage infrastructure. Contributed to prompt engineering for the team's Bedrock-based LLM system and used CI/CD pipelines to deploy production-ready changes all while learning how software systems operate within a major insurance company.  
         </div>
       </div>
 
@@ -695,6 +778,133 @@
   </div>
 </section>
 
+<div class="divider"></div>
+
+<!-- SKILLS & TECHNOLOGIES -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label fade-in">stack</div>
+    <h2 class="section-title fade-in">skills &amp; technologies</h2>
+    <div class="skills-grid">
+
+      <!-- Java -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573" fill="#e0529a"/>
+          <path d="M19.135 20.526s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.526-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.19s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.478 3.618-.478s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.891 3.776-.891M17.127 17.609c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118" fill="#e0529a"/>
+          <path d="M14.401.001s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627" fill="#ff8fbf"/>
+          <path d="M9.734 23.924c4.322.277 10.959-.153 11.116-2.19 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0 .001.553.457 3.393.631" fill="#e0529a"/>
+        </svg>
+        <span class="skill-name">Java</span>
+      </div>
+
+      <!-- Python -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.89S0 5.789 0 11.969c0 6.18 3.403 5.959 3.403 5.959h2.032v-2.867s-.109-3.402 3.35-3.402h5.769s3.24.052 3.24-3.13V3.19S18.28 0 11.914 0zm-3.2 1.848a1.039 1.039 0 1 1 0 2.078 1.039 1.039 0 0 1 0-2.078z" fill="#ff8fbf"/>
+          <path d="M12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12v-.826h8.131S24 18.211 24 12.031c0-6.18-3.403-5.959-3.403-5.959h-2.032v2.867s.109 3.402-3.35 3.402H9.446s-3.24-.052-3.24 3.13v5.339S5.72 24 12.086 24zm3.2-1.848a1.039 1.039 0 1 1 0-2.078 1.039 1.039 0 0 1 0 2.078z" fill="#e0529a"/>
+        </svg>
+        <span class="skill-name">Python</span>
+      </div>
+
+      <!-- C -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.504 2.357a10.286 10.286 0 0 0-2.613-.972A10.345 10.345 0 0 0 11.5 1.18a10.48 10.48 0 0 0-5.25 1.407A10.465 10.465 0 0 0 2.46 6.665a10.399 10.399 0 0 0 0 10.67 10.465 10.465 0 0 0 3.79 3.078A10.48 10.48 0 0 0 11.5 21.82c.81 0 1.634-.092 2.451-.274a10.12 10.12 0 0 0 2.553-.96v-2.99a7.647 7.647 0 0 1-2.39 1.307 8.15 8.15 0 0 1-2.614.436 7.688 7.688 0 0 1-3.858-1.005 7.535 7.535 0 0 1-2.784-2.73 7.476 7.476 0 0 1 0-7.608 7.535 7.535 0 0 1 2.784-2.73A7.688 7.688 0 0 1 11.5 5.26c.896 0 1.77.148 2.614.436a7.647 7.647 0 0 1 2.39 1.307V3.994a.14.14 0 0 0 0-.01v-.01a.14.14 0 0 0 0-.01v-.01a.14.14 0 0 0 0-.01v-.01a.14.14 0 0 0 0-.01v-.01a.14.14 0 0 0 0-.01v-.01l-.002-.003v-.003l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003L16.504 3.8v-.003l-.001-.002v-.003l-.001-.003V3.786l-.001-.003v-.003l-.001-.002v-.003l-.001-.003v-.002L16.497 3.77v-.003l-.001-.002V3.76l-.001-.003v-.003l-.001-.002v-.003l-.001-.003v-.002l-.001-.003v-.003l-.001-.002V3.73l-.001-.003v-.003l-.001-.002v-.003L16.486 3.716v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.697l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.678l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003L16.474 3.66v-.003l-.001-.002v-.003l-.001-.003V3.645l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003L16.467 3.626v-.003l-.001-.002v-.003l-.001-.003V3.611l-.001-.003v-.002l-.001-.003v-.003l-.001-.002V3.595l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.577l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003L16.453 3.558v-.003l-.001-.002v-.003l-.001-.003V3.54l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.52l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003L16.44 3.502v-.003l-.001-.002v-.003l-.001-.003V3.482l-.001-.003v-.002l-.001-.003V3.47l-.001-.002v-.003l-.001-.003V3.459l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.438l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.416l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.395l-.001-.003v-.002l-.001-.003v-.003l-.001-.002V3.38l-.001-.003v-.003l-.001-.002v-.003L16.42 3.367v-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.347l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.326l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.305l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.283l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003L16.4 3.265v-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.245l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.223l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.202l-.001-.003v-.002l-.001-.003v-.003l-.001-.002v-.003l-.001-.003V3.18z" fill="#ff8fbf"/>
+          <text x="12" y="16" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="11" fill="#ff2d78">C</text>
+        </svg>
+        <span class="skill-name">C</span>
+      </div>
+
+      <!-- Node.js -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.998 24c-.321 0-.641-.084-.922-.247l-2.936-1.737c-.438-.245-.224-.332-.08-.383.585-.203.703-.25 1.328-.605.065-.037.151-.023.218.017l2.256 1.339c.082.045.198.045.275 0l8.795-5.076c.082-.047.134-.141.134-.238V6.921c0-.099-.053-.192-.137-.242l-8.791-5.072c-.081-.047-.189-.047-.271 0L3.075 6.68c-.085.05-.139.145-.139.243v10.150c0 .097.054.190.138.236l2.409 1.392c1.307.654 2.108-.116 2.108-.891V7.787c0-.142.114-.253.256-.253h1.115c.139 0 .255.111.255.253v10.023c0 1.745-.95 2.745-2.604 2.745-.508 0-.909 0-2.026-.551L2.28 18.675c-.57-.329-.922-.943-.922-1.600V6.921c0-.658.352-1.273.922-1.601l8.795-5.082c.557-.315 1.296-.315 1.848 0l8.794 5.082c.570.328.924.943.924 1.601v10.154c0 .658-.354 1.273-.924 1.600l-8.794 5.076c-.281.163-.601.247-.925.247zm2.718-6.998c-3.852 0-4.659-1.769-4.659-3.252 0-.142.114-.253.256-.253h1.138c.127 0 .233.092.252.217.172 1.160.684 1.746 3.013 1.746 1.854 0 2.643-.420 2.643-1.405 0-.568-.224-.990-3.114-1.272-2.415-.238-3.909-.773-3.909-2.705 0-1.782 1.502-2.843 4.021-2.843 2.829 0 4.231.981 4.406 3.090.006.072-.019.141-.067.192a.256.256 0 0 1-.188.082h-1.142a.253.253 0 0 1-.245-.199c-.275-1.224-.944-1.616-2.764-1.616-2.036 0-2.272.709-2.272 1.240 0 .644.280.832 3.020 1.196 2.714.36 4.001.872 4.001 2.769 0 1.924-1.606 3.026-4.411 3.026z" fill="#e0529a"/>
+        </svg>
+        <span class="skill-name">Node.js</span>
+      </div>
+
+      <!-- Terraform -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.35 8.653l-4.388 2.538v5.063l4.388-2.538zm1.398.806v5.063l4.387-2.538V6.921zm-6.584-3.82L5.777 8.178v5.063l4.387-2.538zM9.165 9.46L4.776 6.921 9.165 4.39l4.388 2.538zm0 0" fill="#ff8fbf"/>
+          <path d="M9.165 14.519v5.063l4.387-2.538v-5.063zm0 0" fill="#e0529a"/>
+        </svg>
+        <span class="skill-name">Terraform</span>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" fill="#ff2d78"/>
+        </svg>
+        <span class="skill-name">JS</span>
+      </div>
+
+      <!-- Jira -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.571 11.429 6.286 6.143A6 6 0 0 0 6 12l5.571 5.571a6 6 0 0 0 0-8.142zm8.143-8.143A6 6 0 0 0 12 3a6 6 0 0 0-5.714 4.286L12 13l5.714-5.714a6 6 0 0 0-8.143 0zm0 17.428A6 6 0 0 0 18 12l-5.429-5.571-5.714 5.714A6 6 0 0 0 12 21a6 6 0 0 0 7.714-2.286z" fill="#ff8fbf"/>
+        </svg>
+        <span class="skill-name">Jira</span>
+      </div>
+
+      <!-- Jenkins -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <!-- Jenkins "butler" simplified icon as geometric shape -->
+          <circle cx="12" cy="8" r="5" fill="none" stroke="#e0529a" stroke-width="1.5"/>
+          <path d="M12 13c-4 0-7 2-7 4.5S5 21 12 21s7-1 7-3.5S16 13 12 13z" fill="none" stroke="#e0529a" stroke-width="1.5"/>
+          <circle cx="10" cy="7.5" r=".8" fill="#ff2d78"/>
+          <circle cx="14" cy="7.5" r=".8" fill="#ff2d78"/>
+          <path d="M10 10.5s.8 1.2 2 1.2 2-1.2 2-1.2" stroke="#ff2d78" stroke-width="1" fill="none" stroke-linecap="round"/>
+          <path d="M9 4.5c0 0 .5-2 3-2s3 2 3 2" stroke="#e0529a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="skill-name">Jenkins</span>
+      </div>
+
+      <!-- AWS -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.071c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.247-.47c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.030-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103a6.374 6.374 0 0 0-.863.273 2.294 2.294 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.063-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.127a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.141c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.176 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.743.167-1.15.167z" fill="#ff8fbf"/>
+          <path d="M21.332 16.95c-2.511 1.855-6.163 2.842-9.301 2.842-4.401 0-8.365-1.63-11.357-4.338-.235-.215-.024-.51.256-.343 3.233 1.88 7.228 3.011 11.357 3.011 2.786 0 5.851-.575 8.673-1.775.424-.183.782.28.372.603z" fill="#ff2d78"/>
+          <path d="M22.337 15.798c-.32-.41-2.12-.193-2.926-.097-.247.03-.286-.185-.063-.34 1.43-1.006 3.779-.716 4.053-.379.275.339-.072 2.687-1.418 3.808-.207.174-.404.08-.312-.148.303-.756.981-2.445.666-2.844z" fill="#ff2d78"/>
+        </svg>
+        <span class="skill-name">AWS</span>
+      </div>
+
+
+      <!-- GitHub -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" fill="#ff8fbf"/>
+        </svg>
+        <span class="skill-name">GitHub</span>
+      </div>
+
+      <!-- VS Code -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" fill="#e0529a"/>
+        </svg>
+        <span class="skill-name">VS Code</span>
+      </div>
+
+      <!-- PyTorch -->
+      <div class="skill-item">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.005 0L4.952 7.053a9.865 9.865 0 0 0 0 13.992 9.865 9.865 0 0 0 13.992 0 9.865 9.865 0 0 0 0-13.992l-2.944 2.507-.693.692 1.54 1.54a7.659 7.659 0 0 1 0 10.83 7.659 7.659 0 0 1-10.83 0 7.659 7.659 0 0 1 0-10.83L12 1.337z" fill="#ff8fbf"/>
+          <circle cx="15.493" cy="5.335" r="1.431" fill="#ff2d78"/>
+        </svg>
+        <span class="skill-name">PyTorch</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <footer>
   <div class="footer-links">
   <a href="mailto:lj2645@barnard.edu">lj2645@barnard.edu</a>
@@ -738,7 +948,7 @@
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.fade-in, .timeline-item').forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in, .timeline-item, .skill-item').forEach(el => observer.observe(el));
 </script>
 
 </body>
